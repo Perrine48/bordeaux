@@ -16,9 +16,13 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
 	<?php wp_head(); ?>
 </head>
+
+
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
@@ -30,17 +34,41 @@
 			the_custom_logo();
 			if ( is_front_page() && is_home() ) :
 				?>
+				<section class=head_link>
+					<ul>
+						<li>
+							<a href="#">Aller au contenu</a>
+						</li>		
+						<li>
+							<a href="#">Accessibilité</a>
+						</li>	
+						<li>
+							<a href="#">Plan du site</a>
+						</li>
+					</ul>
+
+				</section>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<?php
 			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
+				
 			endif;
 			$_s_description = get_bloginfo( 'description', 'display' );
 			if ( $_s_description || is_customize_preview() ) :
 				?>
-				<p class="site-description"><?php echo $_s_description; /* WPCS: xss ok. */ ?></p>
+				<ul>
+					<li>
+						<a href="#"><i class="fas fa-map-signs"></i>Quartiers</a>
+					</li>
+					<li>
+						<a href="#"><i class="fas fa-map"></i>Plans</a>
+					</li>
+				</ul>
+
+				 <form class="form-inline my-2 my-lg-0">
+      				<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      				<button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+    			</form>
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 
