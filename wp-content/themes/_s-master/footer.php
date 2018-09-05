@@ -30,6 +30,8 @@
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
+<script src="wp-content/themes/_s-master/node_modules/jquery/dist/jquery.js"></script>
+<script src="wp-content/themes/_s-master/node_modules/bootstrap/dist/js/bootstrap.js"></script>
 <?php wp_footer(); ?>
 
 </body>
